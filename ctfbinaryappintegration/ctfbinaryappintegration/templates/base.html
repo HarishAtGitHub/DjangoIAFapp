@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Hello World</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet"/>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<iframe id="myframe" scrolling="no" width="100%" style="overflow:hidden;" frameborder="0" cellspacing="0" cellpadding="0" src="{{ iframe_url }}" vspace="0" hspace="0" onload="resizeIFrame()" >
+</iframe>
+<div class="container container-main">
+    <div class="container-fluid">
+        <legend>
+                <h3>Welcome, {{ username }}</h3>
+        </legend>
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+</div>
+
+
+<script type="application/javascript">
+    function resizeIFrame() {
+        /*use the folowing for the iframe to suit any window size */
+        /*var frameHeight = $("#myframe").get(0).contentWindow.document.body.scrollHeight;
+        $("#myframe").height(frameHeight);*/
+    }
+</script>
+<style>
+    body {
+        margin : 0px; !important
+    }
+</style>
+</body>
+</html>
