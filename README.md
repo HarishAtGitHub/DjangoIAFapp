@@ -6,6 +6,11 @@ This is the example django app written in django to aid integrating any app writ
 The Folder structure of the project is almost same as that followed in review board .
 
 
-Note :
-1. Before starting the django server see to it that the iaf_endpoint/webservice/rest/lib/python2.6/site-packages is in pythonpath
+**How to get the integration working ?**
+
+1. Get into the folder that has manage.py (HINT: its inside ctfbinaryappintegration/ctfbinaryappintegration)
+2. python manage.py runserver <ip>:port
+3. Then upload the Application and Deployment descriptors into ctf 
+
+
 
