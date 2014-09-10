@@ -62,6 +62,9 @@ def authenticate(request):
             project_path = request.GET.get('sfProj')
             ia_support = get_ia_support()
             #the following if loop is to remove the problem when reloading page with one time token
+            #set the soap session in the session and not in cookie because cookie can be 
+            #modified on client side . I did it this way to try out , but did not find time to
+            #change it. Its wrong to put it in cookie
             if(request.COOKIES.get(SOAP_SESSION_KEY)) :
                 try:
                     session_id = request.COOKIES.get(SOAP_SESSION_KEY)
