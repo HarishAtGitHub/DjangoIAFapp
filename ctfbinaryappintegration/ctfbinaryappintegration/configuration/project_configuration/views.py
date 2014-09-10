@@ -63,8 +63,8 @@ def authenticate(request):
             ia_support = get_ia_support()
             #the following if loop is to remove the problem when reloading page with one time token
             #set the soap session in the session and not in cookie because cookie can be 
-            #modified on client side . I did it this way to try out , but did not find time to
-            #change it. Its wrong to put it in cookie
+            #modified on client side . I did it this way as I am not using django.contrib.auth and 
+            #don't want to increase the complexity of app by storing session data
             if(request.COOKIES.get(SOAP_SESSION_KEY)) :
                 try:
                     session_id = request.COOKIES.get(SOAP_SESSION_KEY)
